@@ -1,4 +1,6 @@
 var db = require('../db');
+//connect 
+console.log(db);
 
 module.exports = {
   messages: {
