@@ -1,9 +1,22 @@
 var models = require('../models');
-
+//import fs promises
 module.exports = {
   messages: {
-    get: function (req, res) {}, // a function which handles a get request for all messages
-    post: function (req, res) {} // a function which handles posting a message to the database
+    // a function which handles a get request for all messages
+    get: function (req, res) {
+      console.log("It works??????"); 
+      //if the request method is get and ulr is /messages
+      models.messages.get(req, res, (results)=>{
+        if (err) {
+          throw err;
+        } else {
+          res.json(results);
+        }
+      })
+        
+    }, 
+    // a function which handles posting a message to the database
+    post: function (req, res) {} 
   },
 
   users: {
