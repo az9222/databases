@@ -1,21 +1,28 @@
-CREATE DATABASE chat;
 
-USE chat;
+CREATE DATABASE chats10;
+
+USE chats10;
 
 CREATE TABLE messages (
   /* Describe your table here.*/
-  userID INT PRIMARY KEY, 
+  messageID INT AUTO_INCREMENT PRIMARY KEY, 
   username VARCHAR(20), 
   roomname VARCHAR (20), 
-  message VARCHAR(200)
+  message VARCHAR(200),
+  userID INT
 );
 
+CREATE TABLE user (
+  userID INT  AUTO_INCREMENT PRIMARY KEY, 
+  username VARCHAR(20)
+);
 /* Create other tables and define schemas for them here! */
 
-INSERT INTO `messages` (`userID`, `username`, `roomname`, `message` )
-VALUES 
-(104, 'Jessie', 'hackreactor', 'read the docs' ),
-(105, 'Jon', 'hackreactor', 'hi');
+-- INSERT INTO `messages` (`messageID`, `username`, `roomname`, `message`, `userID` )
+-- VALUES 
+-- (104, 'Jessie', 'hackreactor', 'read the docs', 0 ),
+-- (105, 'Jon', 'hackreactor', 'hi', 0);
+
 
 
 
