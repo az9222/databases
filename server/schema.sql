@@ -1,6 +1,7 @@
-CREATE DATABASE chat;
 
-USE chat;
+CREATE DATABASE chats10;
+
+USE chats10;
 
 CREATE TABLE messages (
   /* Describe your table here.*/
@@ -12,7 +13,16 @@ CREATE TABLE messages (
   PRIMARY KEY (ID)
 );
 
+CREATE TABLE user (
+  userID INT  AUTO_INCREMENT PRIMARY KEY, 
+  username VARCHAR(20)
+);
 /* Create other tables and define schemas for them here! */
+
+-- INSERT INTO `messages` (`messageID`, `username`, `roomname`, `message`, `userID` )
+-- VALUES 
+-- (104, 'Jessie', 'hackreactor', 'read the docs', 0 ),
+-- (105, 'Jon', 'hackreactor', 'hi', 0);
 
 
 CREATE TABLE users (
@@ -23,6 +33,6 @@ CREATE TABLE users (
 
 
 /*  Execute this file from the command line by typing:
- *    mysql -u root < server/schema.sql
+ *    mysql -u student < server/schema.sql
  *  to create the database and the tables.*/
 

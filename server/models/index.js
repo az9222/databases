@@ -1,8 +1,11 @@
-var db = require('../db');
+var db = require('../db'); //requiring the connection
+//connect 
+console.log(db);
 
 module.exports = {
 
   messages: {
+<<<<<<< HEAD
     get: function (callback) {
       // fetch all messages
       // text, username, roomname, id
@@ -21,6 +24,26 @@ module.exports = {
         callback(err, results);
       });
     }
+=======
+    get: function (req, res, callback) {
+        //querry the database
+       let queryArgs = [];
+        db.query('SELECT * FROM messages', queryArgs), (err, results)=>{
+          if (err) {
+            throw new Error('we failed');
+          } else {
+            callback(JSON.stringify(results));
+          }
+        }
+    }, // a function which produces all the messages
+    post: function (post) {
+      
+      
+      INSERT INTO `table`(`columns`)
+      VALUES 
+      (post.user...)
+    } // a function which can be used to insert a message into the database
+>>>>>>> 62e112c8f873cc38e003d7b160ed5442e9b400c2
   },
   users: {
     get: function (callback) {
