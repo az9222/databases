@@ -1,6 +1,4 @@
-var db = require('../db'); //requiring the connection
-//connect 
-console.log(db);
+var db = require('../db');
 
 module.exports = {
 
